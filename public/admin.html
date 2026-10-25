@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151a16">
+  <meta name="description" content="Panel privado de administración de PalmaClo.">
+  <title>Administración de catálogo — PalmaClo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/admin.css">
+  <script type="module" src="/assets/scripts/admin.js?v=3"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="PalmaClo, tienda">PALMACLO<span>.</span></a>
+    <span class="admin-mode"><span></span> ADMINISTRACIÓN</span>
+    <nav class="site-nav" aria-label="Administración">
+      <a href="/">Ver tienda <span aria-hidden="true">↗</span></a>
+      <button id="logoutButton" class="nav-button" type="button">Cerrar sesión</button>
+    </nav>
+  </header>
+
+  <main class="admin-page page-width">
+    <section class="admin-intro">
+      <div>
+        <p class="eyebrow">PANEL DE CONTROL / INVENTARIO</p>
+        <h1>Tu catálogo<span>.</span></h1>
+        <p>Gestioná las piezas que le dan identidad a PalmaClo.</p>
+      </div>
+      <a class="button button-outline" href="/">Abrir tienda <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="inventory-stats" aria-label="Resumen del inventario">
+      <article class="stat-card"><span>Productos publicados</span><strong id="productCount">—</strong><small>En el catálogo</small></article>
+      <article class="stat-card"><span>Unidades disponibles</span><strong id="stockCount">—</strong><small>Stock total cargado</small></article>
+      <article class="stat-card"><span>Stock bajo</span><strong id="lowStockCount">—</strong><small>Hasta 3 unidades</small></article>
+    </section>
+
+    <section class="editor-card" aria-labelledby="editorTitle">
+      <div class="card-heading">
+        <div>
+          <p class="eyebrow">INVENTARIO / EDICIÓN</p>
+          <h2 id="editorTitle">Agregar un producto</h2>
+        </div>
+        <span class="editor-mark" aria-hidden="true">+</span>
+      </div>
+      <form id="productForm" class="product-form">
+        <input id="productId" name="productId" type="hidden">
+        <div class="field field-wide">
+          <label for="nombre">Nombre del producto</label>
+          <input id="nombre" name="nombre" type="text" maxlength="120" placeholder="Ej. Remera boxy PalmaClo" required autocomplete="off">
+        </div>
+        <div class="field field-wide">
+          <label for="descripcion">Descripción <span>Opcional</span></label>
+          <textarea id="descripcion" name="descripcion" rows="3" maxlength="1500" placeholder="Contá qué hace especial a esta pieza."></textarea>
+        </div>
+        <div class="field">
+          <label for="precio">Precio <span>ARS</span></label>
+          <input id="precio" name="precio" type="number" min="0" max="99999999.99" step="0.01" required inputmode="decimal" placeholder="0">
+        </div>
+        <div class="field">
+          <label for="stock">Unidades disponibles</label>
+          <input id="stock" name="stock" type="number" min="0" max="1000000" step="1" required inputmode="numeric" placeholder="0">
+        </div>
+        <div class="field field-wide">
+          <label for="imagen">Imagen del producto</label>
+          <div class="image-field">
+            <div class="image-preview" id="imagePreview"><img id="imagePreviewImg" alt="" src=""><span id="imagePreviewEmpty">Vista previa</span></div>
+            <div class="image-input">
+              <input id="imagen" name="imagen" type="text" maxlength="124" pattern="[A-Za-z0-9][A-Za-z0-9._-]*.(jpg|jpeg|png|webp|avif)" placeholder="producto1.jpg" required autocomplete="off">
+              <small>Usá el nombre de un archivo dentro de la carpeta de imágenes de la tienda.</small>
+            </div>
+          </div>
+        </div>
+        <p id="formMessage" class="form-message field-wide" role="status" aria-live="polite"></p>
+        <div class="form-actions field-wide">
+          <button id="saveProductButton" class="button button-dark" type="submit">Guardar producto <span aria-hidden="true">↗</span></button>
+          <button id="cancelEditButton" class="button button-text" type="button" hidden>Cancelar edición</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-catalog" aria-labelledby="catalogTitle">
+      <div class="inventory-heading">
+        <div>
+          <p class="eyebrow">TU SELECCIÓN</p>
+          <h2 id="catalogTitle">Productos publicados</h2>
+        </div>
+        <div class="inventory-tools">
+          <button id="toggleArchivedButton" class="button button-outline inventory-toggle" type="button">Ver archivados</button>
+          <label class="inventory-search" for="inventorySearch">
+            <span class="sr-only">Buscar en el inventario</span>
+            <input id="inventorySearch" type="search" placeholder="Buscar producto">
+            <span aria-hidden="true">⌕</span>
+          </label>
+        </div>
+      </div>
+      <p id="catalogMessage" class="catalog-message" role="status" aria-live="polite">Cargando inventario…</p>
+      <div id="productsGrid" class="products-grid" aria-busy="true"></div>
+      <button id="loadMoreButton" class="button button-outline load-more" type="button" hidden>Cargar más <span aria-hidden="true">↓</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="/">PALMACLO<span>.</span></a>
+    <small>Administración privada de catálogo</small>
+  </footer>
+</body>
+</html>
+

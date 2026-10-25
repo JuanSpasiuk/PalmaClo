@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151a16">
+  <meta name="description" content="PalmaClo: prendas urbanas elegidas para moverte a tu manera. Descubrí la colección.">
+  <meta property="og:title" content="PalmaClo — Estilo propio">
+  <meta property="og:description" content="Prendas elegidas para moverte a tu manera.">
+  <meta property="og:type" content="website">
+  <title>PalmaClo — Estilo propio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/home.css?v=4">
+  <script type="module" src="/assets/scripts/home.js?v=5"></script>
+</head>
+<body>
+  <div class="announcement-bar">
+    <span>PALMACLO / BUENOS AIRES</span>
+    <span>Una forma propia de moverte.</span>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="/" aria-label="PalmaClo, inicio">PALMACLO<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir navegación" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
+      <a href="#novedades">Novedades</a>
+      <a href="#coleccion">Colección</a>
+      <a href="#historia">La marca</a>
+      <a class="account-link" id="accountLink" href="/login">Ingresar</a>
+      <a class="admin-link" id="adminLink" href="/admin" hidden>Administrar</a>
+      <button class="logout-button" id="logoutButton" type="button" hidden>Cerrar sesión</button>
+    </nav>
+    <div class="header-actions">
+      <form class="search-form" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">Buscar productos</label>
+        <input id="searchInput" name="q" type="search" placeholder="Buscar" autocomplete="off">
+        <button type="submit" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+        </button>
+      </form>
+      <button class="bag-button" id="cartButton" type="button" aria-haspopup="dialog" aria-controls="cartDialog">
+        Bolsa <span class="bag-count" id="cartCount" aria-label="0 productos en la bolsa">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="novedades" aria-labelledby="heroTitle">
+      <div class="hero-image" role="img" aria-label="Campaña urbana de PalmaClo"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> PALMACLO / NUEVA TEMPORADA</p>
+        <h1 id="heroTitle">Lo que sos,<br><em>se nota.</em></h1>
+        <p class="hero-copy">Prendas elegidas para moverte a tu manera.<br>Diseño urbano, actitud propia.</p>
+        <a class="button button-acid" href="#coleccion">Explorar colección <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-index"><span>01</span><span class="hero-index-line"></span><span>BUENOS AIRES</span></div>
+      <a class="hero-scroll" href="#categorias"><span></span> BAJÁ PARA DESCUBRIR</a>
+    </section>
+
+    <section class="category-section page-width" id="categorias" aria-labelledby="categoryTitle">
+      <div class="section-intro">
+        <p class="eyebrow">ENCONTRÁ TU ESTILO</p>
+        <h2 id="categoryTitle">La ciudad es tuya.</h2>
+      </div>
+      <div class="category-grid">
+        <button class="category-tile" type="button" data-category="remeras">
+          <span>Remeras <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="category-tile" type="button" data-category="pantalones">
+          <span>Pantalones <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="category-tile" type="button" data-category="camperas">
+          <span>Capas <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="category-tile" type="button" data-category="shorts">
+          <span>Shorts / Jorts <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="category-tile" type="button" data-category="camisas">
+          <span>Camisas <span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="category-tile" type="button" data-category="accesorios">
+          <span>Accesorios <span aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track"><div class="ticker-sequence"><span>ESTILO PROPIO</span><i>✳</i><span>HECHO PARA MOVERTE</span><i>✳</i><span>PALMACLO / BA</span><i>✳</i></div></div>
+    </div>
+
+    <section id="coleccion" class="collection page-width" aria-labelledby="collectionTitle">
+      <div class="collection-heading">
+        <div>
+          <p class="eyebrow">SELECCIÓN PALMACLO</p>
+          <h2 id="collectionTitle">La colección<span class="heading-period">.</span></h2>
+        </div>
+        <p class="collection-aside">Piezas con carácter.<br>Hechas para durar.</p>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="category-filters" role="group" aria-label="Filtrar por categoría">
+          <button class="filter-chip is-active" type="button" data-category="todos" aria-pressed="true">Todo</button>
+          <button class="filter-chip" type="button" data-category="remeras" aria-pressed="false">Remeras</button>
+          <button class="filter-chip" type="button" data-category="pantalones" aria-pressed="false">Pantalones</button>
+          <button class="filter-chip" type="button" data-category="camperas" aria-pressed="false">Capas</button>
+          <button class="filter-chip" type="button" data-category="shorts" aria-pressed="false">Shorts / Jorts</button>
+          <button class="filter-chip" type="button" data-category="camisas" aria-pressed="false">Camisas</button>
+          <button class="filter-chip" type="button" data-category="accesorios" aria-pressed="false">Accesorios</button>
+          <button class="filter-chip favorites-filter" id="favoritesFilter" type="button" aria-pressed="false">♡ Favoritos</button>
+        </div>
+        <label class="sort-control" for="sortSelect">
+          <span>Ordenar</span>
+          <select id="sortSelect" name="sort">
+            <option value="featured">Destacados</option>
+            <option value="newest">Más recientes</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="name">Nombre</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="catalog-meta">
+        <p id="resultsCount" aria-live="polite"></p>
+        <button id="clearFiltersButton" class="clear-filters" type="button" hidden>Limpiar filtros</button>
+      </div>
+      <p id="catalogMessage" class="catalog-message" role="status" aria-live="polite">Preparando la colección…</p>
+      <div id="productsGrid" class="products-grid" aria-busy="true"></div>
+      <button id="loadMoreButton" class="button button-outline load-more" type="button" hidden>Ver más productos <span aria-hidden="true">↓</span></button>
+    </section>
+
+    <section class="brand-story" id="historia">
+      <div class="story-image" role="img" aria-label="Texturas y prendas de la colección PalmaClo"></div>
+      <div class="story-content">
+        <p class="eyebrow">MÁS QUE LO QUE TE PONÉS</p>
+        <h2>Tu camino.<br><em>Tu código.</em></h2>
+        <p>PalmaClo nace en Buenos Aires para quienes hacen su propio recorrido. Prendas urbanas, combinables y listas para todos los días.</p>
+        <a class="story-link" href="#coleccion">Encontrá tu próxima favorita <span aria-hidden="true">↗</span></a>
+        <span class="story-number">PALMACLO / 2026</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <a class="wordmark footer-wordmark" href="/">PALMACLO<span>.</span></a>
+      <p>Vestite como sos.</p>
+      <a class="footer-top-link" href="#novedades">Volver arriba ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="year"></span> PALMACLO. BUENOS AIRES.</small>
+      <div><a href="#coleccion">Colección</a><a href="/login">Mi cuenta</a></div>
+    </div>
+  </footer>
+
+  <dialog class="product-dialog" id="productDialog" aria-labelledby="dialogProductName">
+    <button class="dialog-close" id="closeProductDialog" type="button" aria-label="Cerrar detalle">×</button>
+    <div class="product-dialog-layout">
+      <div class="product-dialog-image"><img id="dialogProductImage" alt="" src=""></div>
+      <div class="product-dialog-info">
+        <p class="eyebrow" id="dialogProductCategory"></p>
+        <h2 id="dialogProductName"></h2>
+        <p class="dialog-product-price" id="dialogProductPrice"></p>
+        <p class="dialog-product-description" id="dialogProductDescription"></p>
+        <p class="dialog-stock" id="dialogProductStock"></p>
+        <button class="button button-dark dialog-add-button" id="dialogAddButton" type="button">Sumar a la bolsa <span aria-hidden="true">↗</span></button>
+        <p class="dialog-note">Los detalles de pago y envío se habilitarán antes de abrir la tienda al público.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="cart-dialog" id="cartDialog" aria-labelledby="cartTitle">
+    <div class="cart-panel">
+      <header class="cart-header">
+        <div><p class="eyebrow">PALMACLO / TU SELECCIÓN</p><h2 id="cartTitle">Tu bolsa<span>.</span></h2></div>
+        <button class="dialog-close cart-close" id="closeCartDialog" type="button" aria-label="Cerrar bolsa">×</button>
+      </header>
+      <div class="cart-content">
+        <p class="cart-empty" id="cartEmpty">Tu bolsa está esperando algo especial.</p>
+        <div class="cart-items" id="cartItems"></div>
+      </div>
+      <footer class="cart-footer">
+        <div class="cart-total"><span>Subtotal</span><strong id="cartSubtotal">$ 0</strong></div>
+        <p class="cart-note">La bolsa se guarda en este navegador. Los pagos y envíos se configurarán antes del lanzamiento.</p>
+        <button class="button button-dark cart-continue" id="continueShopping" type="button">Seguir explorando</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <p class="toast" id="toast" role="status" aria-live="polite"></p>
+</body>
+</html>
+
+

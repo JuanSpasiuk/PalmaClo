@@ -1,0 +1,29 @@
+{
+  "name": "login-pg-fixed-prueba",
+  "version": "1.0.0",
+  "description": "Tienda PalmaClo con autenticación segura y catálogo de productos",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "security:secret": "node scripts/generate-secret.js",
+    "migrate:passwords": "node scripts/migrate-passwords.js",
+    "admin:create": "node scripts/create-first-admin.js",
+    "products:seed": "node scripts/seed-products.js",
+    "customer:create": "node scripts/create-customer.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
